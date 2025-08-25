@@ -13,4 +13,5 @@ public interface EmpRepo extends JpaRepository<Employee,Long> {
 
     List<Employee> deleteByDisgnation(String desc);
     Optional<Employee> findTopByDisgnationOrderBySalaryDesc(String desc);
+    //Optional<Employee> findTop2ByDisgnationOrderBySalaryDesc(String desc); it will give top2 val
 }
