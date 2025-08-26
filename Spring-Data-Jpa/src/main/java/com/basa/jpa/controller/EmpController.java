@@ -3,6 +3,7 @@ package com.basa.jpa.controller;
 import com.basa.jpa.model.Employee;
 import com.basa.jpa.services.EmpServices;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
@@ -35,5 +36,21 @@ public class EmpController {
     @GetMapping("/getByEmpSalByDesc/{desc}")
     public Optional<Employee> getEmpMaxSalByDesc(@PathVariable String desc){
         return empsrv.getEmpMaxSalByDesc(desc);
+    }
+    @RequestMapping(value = "/pagingAndSortingEmployees/{pageNumber}/{pageSize}/{sortProperty}",
+            method = RequestMethod.GET)
+    public Page<Employee> employeePagination(@PathVariable Integer pageNumber,
+                                             @PathVariable Integer pageSize,
+                                             @PathVariable String sortProperty) {
+        return empsrv.getEmployeePagination(pageNumber, pageSize, sortProperty);
+    }
+    @GetMapping("/q/getAllEmp")
+    public List<Employee> getAllEmpByQuery(){
+        return empsrv.getAllEmpByQuery();
+    }
+    @GetMapping("/q/updateEmployeeState/{activeState}/{designationList}")
+    public List<Employee> findEmployeeByDesignationAndActiveQuery(@PathVariable Boolean activeState, @PathVariable
+    List<String> designationList){
+        return empsrv.findEmployeeByDesignationAndActiveQuery(activeState,designationList);
     }
 }

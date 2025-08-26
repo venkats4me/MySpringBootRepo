@@ -7,18 +7,26 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Course-api-data" />
-        <module name="Spring-Data-Jpa" />
+        <module name="Jpa-O-O-O-M" />
         <module name="Shopping-app" />
         <module name="CourseApi" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Spring-Data-Jpa" target="17" />
+      <module name="Spring-Data-Jpa (1)" target="17" />
+      <module name="Spring-Data-Jpa (2)" target="17" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="Course-api-data" options="-parameters" />
       <module name="CourseApi" options="-parameters" />
+      <module name="Jpa-O-O-O-M" options="-parameters" />
       <module name="Shopping-app" options="-parameters" />
       <module name="Spring-Data-Jpa" options="-parameters" />
+      <module name="Spring-Data-Jpa (1)" options="-parameters" />
+      <module name="Spring-Data-Jpa (2)" options="-parameters" />
     </option>
   </component>
 </project>

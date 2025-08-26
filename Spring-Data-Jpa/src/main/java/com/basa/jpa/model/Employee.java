@@ -11,6 +11,7 @@ public class Employee {
     private Long empId;
     private String name;
     private int age;
+    private Boolean status;
     @Column(name = "Phone_Number")
     private long phoneNumber=(long) (Math.random()*Math.pow(10,10));
     private String disgnation;
@@ -64,4 +65,12 @@ public class Employee {
     public void setSalary(double salary) {
         this.salary = salary;
     }
+    public Boolean getStatus() {
+        return status;
+    }
+
+    public void setStatus(Boolean status) {
+        this.status = status;
+    }
+
 }
