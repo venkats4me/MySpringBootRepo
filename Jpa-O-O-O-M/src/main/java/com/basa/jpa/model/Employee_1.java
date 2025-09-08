@@ -1,29 +1,28 @@
 package com.basa.jpa.model;
 
 import jakarta.persistence.*;
-import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 
 @Entity
-@Table(name = "employee_details")
-@Transactional
-public class Employee {
+@Table(name = "employee1_details")
+public class Employee_1 {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "emp_id")
     private Long empId;
     private String empName;
     private Integer empAge;
-    @OneToOne(cascade = CascadeType.ALL)
-  //  @JoinColumn(name = "fk_add_id")
-    private Address address;
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "emp_id", referencedColumnName = "emp_id")
+    private List<Address_1> address1List;
 
-    public Address getAddress() {
-        return address;
+    public List<Address_1> getAddress1List() {
+        return address1List;
     }
 
-    public void setAddress(Address address) {
-        this.address = address;
+    public void setAddress1List(List<Address_1> address1List) {
+        this.address1List = address1List;
     }
 
     public Long getEmpId() {
@@ -49,6 +48,4 @@ public class Employee {
     public void setEmpAge(Integer empAge) {
         this.empAge = empAge;
     }
-
-
 }

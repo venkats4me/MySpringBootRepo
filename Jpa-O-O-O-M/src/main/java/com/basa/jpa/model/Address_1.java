@@ -3,15 +3,13 @@ package com.basa.jpa.model;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name="address")
-public class Address {
+@Table(name="address_1")
+public class Address_1 {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long addressId;
     private String city;
     private String addressType;
-    @OneToOne(mappedBy = "address")
-    private Employee employee;
 
 
     public Long getAddressId() {
@@ -37,5 +35,4 @@ public class Address {
     public void setAddressType(String addressType) {
         this.addressType = addressType;
     }
-
 }

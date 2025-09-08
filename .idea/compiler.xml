@@ -8,12 +8,12 @@
         <outputRelativeToContentRoot value="true" />
         <module name="Course-api-data" />
         <module name="Jpa-O-O-O-M" />
+        <module name="Spring-Data-Jpa" />
         <module name="Shopping-app" />
         <module name="CourseApi" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="Spring-Data-Jpa" target="17" />
       <module name="Spring-Data-Jpa (1)" target="17" />
       <module name="Spring-Data-Jpa (2)" target="17" />
     </bytecodeTargetLevel>
